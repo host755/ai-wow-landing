@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI WOW - Acquisire Clienti con l'Intelligenza Artificiale Creativa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 50 Q 25 25, 50 50 T 100 50" stroke="rgba(255,255,255,0.1)" fill="none" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Logo in CTA sections */
+        .cta-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 span {
+            color: #ffd700;
+        }
+
+        .subheadline {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 18px 45px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: #ffed4e;
+        }
+
+        .cta-green {
+            background: #10b981;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .cta-green:hover {
+            background: #059669;
+            box-shadow: 0 15px 50px rgba(16, 185, 129, 0.6);
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .story-intro {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+        }
+
+        .story-intro h2 {
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .story-intro p {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .story-intro .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .story-intro .highlight-box p {
+            margin: 0;
+            color: #856404;
+            font-size: 17px;
+            font-style: italic;
+        }
+
+        .story-text {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        .story-text strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .bullet-points {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .bullet-points li {
+            padding-left: 30px;
+            margin-bottom: 12px;
+            position: relative;
+            font-size: 17px;
+            color: #4a5568;
+        }
+
+        .bullet-points li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #e53e3e;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .bullet-points.success li::before {
+            content: '✓';
+            color: #52c41a;
+        }
+
+        .crisis-box {
+            background: #fee;
+            border-left: 4px solid #e53e3e;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        .crisis-box h3 {
+            color: #c53030;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .crisis-box p {
+            color: #742a2a;
+            font-size: 18px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .subheadline {
+                font-size: 18px;
+            }
+
+            .hero {
+                padding: 60px 0 80px;
+            }
+
+            .story-intro {
+                padding: 30px 25px;
+            }
+
+            .story-intro h2 {
+                font-size: 28px;
+            }
+
+            .cta-logo {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- HERO SECTION - Prima sezione con CTA principale              -->
+    <!-- ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                
+                <!-- 🔴 LOGO - Sostituisci "AI_WOW_logo.png" con il nome del tuo logo -->
+                <img src="AI_WOW_logo.png" alt="AI WOW Logo" class="cta-logo">
+                
+                <div class="eyebrow">MANUALE PRATICO PER ACQUISIRE CLIENTI</div>
+                
+                <!-- 🔴 TITOLO PRINCIPALE - Modifica qui il titolo -->
+                <h1>
+                    Ho scritto una canzone per un bar<br>
+                    e mi hanno chiamato <span>entro un'ora</span>
+                </h1>
+                
+                <!-- 🔴 SOTTOTITOLO - Modifica qui la descrizione -->
+                <p class="subheadline">
+                    Scopri 5 strategie creative basate sull'AI che fanno sì che i clienti ti cerchino (invece di ignorare le tue email a freddo)
+                </p>
+                
+                <!-- 🔴 PULSANTE CTA - Modifica il testo del pulsante -->
+                <button class="cta-primary">SCARICA SUBITO AI WOW</button>
+                
+                <div class="guarantee-badge">
+                    🛡️ Garanzia 30 giorni soddisfatti o rimborsati
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section - First Part -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-intro">
+                               
+                <p>Ciao, Sono Mario verniero e ti dico subito che io <strong>NON sono un esperto di AI</strong>. Non sono un nerd, non sono un guru tecnologico :-)</p>
+                
+                <p>Sono una persona pratica che vende semplici servizi online a piccole aziende locali.</p>
+
+                <div class="highlight-box">
+                    <p>Questo NON è un corso sull'AI. Non è teoria. Non richiede di studiare prompt o automazioni complesse.</p>
+                </div>
+
+                <p>È un sistema di acquisizione clienti innovativo che puoi applicare da subito, per fornire servizi che puoi realizzare tu oppure far realizzare ad altri e guadagnarci sopra.</p>
+            </div>
+
+            <div class="story-intro">
+                <h2>Il momento in cui tutto stava andando a rotoli</h2>
+                
+                <p class="story-text">
+                    Lo scorso anno ho avuto uno di quei momenti di crisi lavorativa. Sempre più persone si buttano nel settore digitale e c'é chi lavora a prezzi stracciati (facendo schifezze o danni, ma questo è un altro discorso).
+                </p>
+
+                <p class="story-text">
+                    Avevo bisogno di trovare nuovi clienti, ma mi sono accorto di essere completamente <strong>invisibile</strong>.
+                </p>
+
+                <p class="story-text">
+                    Facevo le stesse cose che fanno tutti:
+                </p>
+
+                <ul class="bullet-points">
+                    <li>Inviare email a freddo</li>
+                    <li>Fare post sui social</li>
+                    <li>Creare "webinar" (che vedevo solo io)</li>
+                    <li>Spendere (inutilmente) soldi in pubblicità</li>
+                </ul>
+
+                <div class="crisis-box">
+                    <h3>Risultati?</h3>
+                    <p><strong>Zero.</strong> Nessun nuovo cliente, solo una decina di richieste di preventivo per chiedermi se facevo un prezzo più basso di altri.</p>
+                </div>
+
+                <p class="story-text">
+                    Mi sono reso conto che ero semplicemente l'ennesimo "tipo dell'agenzia" che cerca di vendere qualcosa a qualcuno.
+                </p>
+
+                <p class="story-text">
+                    <strong>Ed è lì che ho preso la decisione che ha cambiato tutto</strong>, grazie a un uso completamente diverso dell'intelligenza artificiale.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- The Turning Point -->
+    <section class="story-section" style="background: white;">
+        <div class="container">
+            <div class="story-intro" style="background: #ff6b35; color: white; box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);">
+                <h2 style="color: white;">La svolta: ho usato l'AI in modo CREATIVO</h2>
+                
+                <p style="color: rgba(255,255,255,0.95);">
+                    Come tutti, usavo l'AI per scrivere più veloce o automatizzare lavori ripetitivi. <strong style="color: #ffd700;">Mi sbagliavo di grosso!</strong>
+                </p>
+
+                <p style="color: rgba(255,255,255,0.95);">
+                    L'ho usata in modo <strong style="color: #ffd700;">CREATIVO</strong> e... tutto è cambiato.
+                </p>
+            </div>
+
+            <div class="story-intro">
+                <h2>La canzone che ha aperto tutto</h2>
+                
+                <!-- 🔴 IMMAGINE OPZIONALE - Aggiungi qui uno screenshot di SUNO -->
+                <!-- <img src="nome_immagine.jpg" style="width: 100%; border-radius: 8px; margin-bottom: 20px;"> -->
+                
+                <p class="story-text">
+                    Ti dico subito che non c'è alcun "segreto magico" o "software miracoloso". Ho usato strumenti comuni, gratuiti o a basso costo.
+                </p>
+
+                <p class="story-text">
+                    Ad esempio, molti conoscono <strong>SUNO</strong>, uno strumento AI che realizza musica.
+                </p>
+
+                <p class="story-text">
+                    Bene, come ho detto prima, l'ho usato per creare una breve canzone su un bar locale che volevo provare a prendere come cliente.
+                </p>
+
+                <p class="story-text">
+                    Niente di complicato, solo una canzoncina orecchiabile di 30 secondi.
+                </p>
+
+                <div class="highlight-box" style="background: #e6f7ff; border-left: 4px solid #1890ff;">
+                    <p style="color: #003a8c; font-size: 19px;">
+                        L'ho mandata a quelli del bar via email con l'oggetto:<br>
+                        <strong>"Ti ho scritto una canzone ☕🎵"</strong>
+                    </p>
+                </div>
+
+                <p class="story-text">Tutto qui.</p>
+
+                <div style="background: #f6ffed; border: 2px solid #52c41a; padding: 35px; margin: 40px 0; border-radius: 8px; text-align: center;">
+                    <h3 style="color: #389e0d; font-size: 28px; margin-bottom: 15px;">E sai cosa è successo?</h3>
+                    <p style="color: #237804; font-size: 22px; font-weight: 600; margin: 0;">
+                        Mi hanno chiamato!!
+                    </p>
+                    <p style="color: #389e0d; font-size: 17px; margin-top: 15px;">
+                        Non mi hanno risposto via email, Whatsapp o Messenger: <strong>mi hanno chiamato!!</strong><br>
+                        Non mi era MAI successo prima!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Approach -->
+    <section class="story-section" style="background: #f9fafb;">
+        <div class="container">
+            <div class="story-intro">
+                <h2>Il nuovo approccio che cambia tutto</h2>
+                
+                <p class="story-text">
+                    Quell'esperienza ha ribaltato completamente il mio approccio sull'acquisizione clienti.
+                </p>
+
+                <p class="story-text" style="font-size: 20px; font-weight: 600; color: #1a1a1a; margin: 30px 0;">
+                    Ho smesso di mandare proposte e ho iniziato a mandare esperienze.
+                </p>
+
+                <ul class="bullet-points success" style="list-style: none;">
+                    <li style="color: #1a1a1a;">Ho scritto canzoni sulle aziende.</li>
+                    <li style="color: #1a1a1a;">Ho trasformato negozi in cartoni animati.</li>
+                    <li style="color: #1a1a1a;">Ho creato trailer cinematografici.</li>
+                    <li style="color: #1a1a1a;">Ho realizzato Mascotte.</li>
+                    <li style="color: #1a1a1a;">e altro ancora...</li>
+                </ul>
+
+                <p class="story-text" style="font-size: 20px; margin-top: 30px;">
+                    E le persone hanno risposto... <strong>ancora e ancora.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What It Is NOT -->
+    <section style="background: #1a1a1a; padding: 80px 0;">
+        <div class="container">
+            <div style="max-width: 850px; margin: 0 auto;">
+                <h2 style="font-size: 38px; margin-bottom: 50px; color: white; text-align: center; text-transform: uppercase; letter-spacing: 1px;">Cosa NON è AI WOW</h2>
+                
+                <div style="display: grid; gap: 20px; margin-bottom: 50px;">
+                    <div style="background: #2d2d2d; padding: 25px 30px; border-left: 5px solid #e53e3e; border-radius: 4px;">
+                        <p style="font-size: 20px; color: white; margin: 0; font-weight: 600;">
+                            <span style="color: #e53e3e; font-size: 24px; margin-right: 15px;">✗</span>
+                            Non è l'ennesimo "manuale su ChatGPT"
+                        </p>
+                    </div>
+                    <div style="background: #2d2d2d; padding: 25px 30px; border-left: 5px solid #e53e3e; border-radius: 4px;">
+                        <p style="font-size: 20px; color: white; margin: 0; font-weight: 600;">
+                            <span style="color: #e53e3e; font-size: 24px; margin-right: 15px;">✗</span>
+                            Non si parla di prompt, produttività o automazione
+                        </p>
+                    </div>
+                    <div style="background: #2d2d2d; padding: 25px 30px; border-left: 5px solid #e53e3e; border-radius: 4px;">
+                        <p style="font-size: 20px; color: white; margin: 0; font-weight: 600;">
+                            <span style="color: #e53e3e; font-size: 24px; margin-right: 15px;">✗</span>
+                            Non è la formula per diventare "ricchi in una settimana"
+                        </p>
+                    </div>
+                </div>
+
+                <div style="background: #ffd700; color: #1a1a1a; padding: 50px 40px; border-radius: 8px; text-align: center; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);">
+                    <p style="font-size: 28px; font-weight: 700; line-height: 1.4; margin-bottom: 20px;">
+                        È un manuale di marketing creativo PRATICO per chi vuole farsi notare da potenziali clienti
+                    </p>
+                    <p style="font-size: 18px; margin: 0; opacity: 0.8;">
+                        Il resto toccherà a te realizzarlo. Il guadagno dipende sempre da cosa offri a un cliente, non certo da un manuale.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 Strategies Section -->
+    <section style="background: white; padding: 80px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 42px; color: #1a1a1a; margin-bottom: 20px;">Le 5 Strategie Vincenti di AI WOW</h2>
+                <p style="font-size: 20px; color: #4a5568; max-width: 800px; margin: 0 auto;">
+                    Immediatamente utilizzabili, spiegate passo per passo, per trasformare la curiosità in conversazioni, e le conversazioni in clienti.
+                </p>
+            </div>
+
+            <!-- 🔴 IMMAGINE OPZIONALE - Overview delle 5 strategie -->
+            <!-- <img src="strategie_overview.jpg" style="width: 100%; max-width: 800px; margin: 0 auto 40px; display: block; border-radius: 12px;"> -->
+
+            <!-- Strategy 1 -->
+            <div style="background: #f8f9ff; padding: 40px; border-radius: 12px; margin-bottom: 30px; border-left: 6px solid #667eea;">
+                <h3 style="color: #667eea; font-size: 28px; margin-bottom: 15px;">
+                    📱 Strategia 1: Suno Song
+                </h3>
+                <p style="font-size: 18px; color: #4a5568; line-height: 1.7;">
+                    Scopri come uso Suno (un potente strumento AI per scrivere canzoni) per creare canzoni personalizzate sulle attività dei tuoi prospect.
+                </p>
+            </div>
+
+            <!-- Strategy 2 -->
+            <div style="background: #fff5f5; padding: 40px; border-radius: 12px; margin-bottom: 30px; border-left: 6px solid #f56565;">
+                <h3 style="color: #c53030; font-size: 28px; margin-bottom: 15px;">
+                    🎙️ Strategia 2: Demo Deepfake
+                </h3>
+                <p style="font-size: 18px; color: #4a5568; line-height: 1.7;">
+                    Crea annunci audio realistici per le aziende usando ElevenLabs.
+                </p>
+            </div>
+
+            <!-- Strategy 3 -->
+            <div style="background: #f0fff4; padding: 40px; border-radius: 12px; margin-bottom: 30px; border-left: 6px solid #48bb78;">
+                <h3 style="color: #2f855a; font-size: 28px; margin-bottom: 15px;">
+                    🎨 Strategia 3: Cartoon!
+                </h3>
+                <p style="font-size: 18px; color: #4a5568; line-height: 1.7;">
+                    Trasforma il loro negozio o il loro staff in un divertente cartone animato generato dall'AI. Mandalo come regalo "solo per divertimento".
+                </p>
+            </div>
+
+            <!-- Strategy 4 -->
+            <div style="background: #fffaf0; padding: 40px; border-radius: 12px; margin-bottom: 30px; border-left: 6px solid #ed8936;">
+                <h3 style="color: #c05621; font-size: 28px; margin-bottom: 15px;">
+                    🖼️ Strategia 4: Ads Mockup
+                </h3>
+                <p style="font-size: 18px; color: #4a5568; line-height: 1.7;">
+                    Mostra ai prospect come apparirebbe il loro brand su un cartellone pubblicitario in centro. Trasformi l'immaginazione in prova concreta e iniziano a credere nella tua visione.
+                </p>
+            </div>
+
+            <!-- Strategy 5 -->
+            <div style="background: #f7fafc; padding: 40px; border-radius: 12px; margin-bottom: 30px; border-left: 6px solid #4299e1;">
+                <h3 style="color: #2b6cb0; font-size: 28px; margin-bottom: 15px;">
+                    🎬 Strategia 5: Video Podcast
+                </h3>
+                <p style="font-size: 18px; color: #4a5568; line-height: 1.7;">
+                    Crea mini-podcast che fanno sentire famosi gli imprenditori locali. Costruisci autorevolezza ed emozione, la combinazione di vendita più potente al mondo.
+                </p>
+            </div>
+
+            <div style="background: #e6f7ff; padding: 40px; border-radius: 12px; text-align: center; margin-top: 50px;">
+                <p style="font-size: 20px; color: #003a8c; font-weight: 600; line-height: 1.6;">
+                    Per ogni singola strategia ottieni <strong>TUTTO</strong> quello che ti occorre!
+                </p>
+                <p style="font-size: 18px; color: #003a8c; margin-top: 15px;">
+                    AI WOW non è un "corso", ma un vero manuale di istruzioni pratiche, facili da mettere in pratica e che ti permette di essere operativo in <strong>meno di un'ora</strong> da adesso.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CTA SECTION - Sezione chiamata all'azione intermedia         -->
+    <!-- ============================================================ -->
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 80px 0; text-align: center; color: white;">
+        <div class="container">
+            
+            <!-- 🔴 LOGO nella sezione CTA -->
+            <img src="AI_WOW_logo.png" alt="AI WOW Logo" class="cta-logo">
+            
+            <h2 style="font-size: 42px; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                Pronto a trasformare il tuo approccio?
+            </h2>
+            <p style="font-size: 22px; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Solo la Strategia SunoSong varrebbe da sola il prezzo. Quell'idea ha aperto più porte per la mia agenzia di qualsiasi altra cosa che io abbia mai fatto.
+            </p>
+            <p style="font-size: 24px; font-weight: 700; margin-bottom: 40px; color: #ffd700;">
+                Ma non riceverai UNA strategia: te ne ho preparate 5!
+            </p>
+
+            <!-- 🔴 PULSANTE CTA - Sostituisci con il tuo sistema di pagamento -->
+            <button class="cta-primary" style="font-size: 20px; padding: 20px 50px;">
+                SCARICA SUBITO AI WOW
+            </button>
+            <!-- Integra qui Stripe, PayPal, ecc. -->
+
+            <div style="margin-top: 30px; font-size: 16px; opacity: 0.9;">
+                <p>💳 Pagamento sicuro | 🛡️ Garanzia 30 giorni | 📧 Accesso immediato</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section style="background: #f0fff4; padding: 60px 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 36px; color: #2f855a; margin-bottom: 25px;">🛡️ ZERO RISCHI!</h2>
+                <p style="font-size: 20px; color: #276749; line-height: 1.7; margin-bottom: 20px;">
+                    Sei protetto dalla mia <strong>Garanzia 30 giorni soddisfatti o rimborsati</strong>.
+                </p>
+                <p style="font-size: 18px; color: #276749; line-height: 1.7;">
+                    Non devi "spiegarmi" niente, il rischio è soltanto mio, tu puoi solo guadagnare.
+                </p>
+                <p style="font-size: 17px; color: #276749; margin-top: 20px; font-style: italic;">
+                    E no, non c'è nessun trucco. Posso farlo perché solo il 2% dei clienti chiede il rimborso, il 98% lo usa con successo 😉
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="background: white; padding: 80px 0;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 42px; margin-bottom: 60px; color: #1a1a1a;">Domande Frequenti</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                
+                <!-- FAQ 1 -->
+                <div style="background: #f9fafb; padding: 30px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea;">
+                    <h3 style="color: #1a1a1a; font-size: 22px; margin-bottom: 15px;">
+                        1. Cos'è esattamente AI WOW?
+                    </h3>
+                    <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
+                        È un manuale di marketing creativo per agenzie web o chi vuole provare a guadagnare qualcosa proponendo servizi web. Imparerai 10 strategie passo-passo che usano strumenti AI per ottenere l'attenzione dei clienti, guadagnare fiducia e chiudere contratti, tutto testato nel mondo reale.
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div style="background: #f9fafb; padding: 30px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea;">
+                    <h3 style="color: #1a1a1a; font-size: 22px; margin-bottom: 15px;">
+                        2. Devo essere un tecnico o un esperto di AI per usarlo?
+                    </h3>
+                    <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
+                        Se sai usare ChatGPT, Canva o mandare un'email, puoi applicare tutte le strategie. Il manuale ti guida attraverso ogni strumento, cosa scrivere e come applicarlo per il tuo scopo.
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div style="background: #f9fafb; padding: 30px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea;">
+                    <h3 style="color: #1a1a1a; font-size: 22px; margin-bottom: 15px;">
+                        3. Quanto velocemente posso vedere risultati?
+                    </h3>
+                    <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
+                        Non sarebbe serio farti delle promesse, ma posso dirti che c'è chi vede risposte già dalla prima settimana. Questo accade perché le tattiche sono pronte all'uso, puoi implementare la tua prima strategia già dopo un giorno.
+                    </p>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div style="background: #f9fafb; padding: 30px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea;">
+                    <h3 style="color: #1a1a1a; font-size: 22px; margin-bottom: 15px;">
+                        4. E se ho già usato l'AI prima e non mi ha aiutato?
+                    </h3>
+                    <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
+                        La maggior parte delle persone usa l'AI per la velocità e per fare cose "noiose". Tu imparerai a usarla per creare emozione e curiosità, ovvero ciò che fa vendere.
+                    </p>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div style="background: #f9fafb; padding: 30px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea;">
+                    <h3 style="color: #1a1a1a; font-size: 22px; margin-bottom: 15px;">
+                        5. E se non fa per me?
+                    </h3>
+                    <p style="font-size: 17px; color: #4a5568; line-height: 1.7;">
+                        Sei protetto dalla mia Garanzia 30 giorni soddisfatti o rimborsati: il rischio è soltanto mio, tu puoi solo guadagnare.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FINAL CTA - Ultima chiamata all'azione                       -->
+    <!-- ============================================================ -->
+    <section style="background: #1a1a1a; padding: 100px 0; text-align: center; color: white;">
+        <div class="container">
+            
+            <!-- 🔴 LOGO nella sezione finale -->
+            <img src="AI_WOW_logo.png" alt="AI WOW Logo" class="cta-logo" style="filter: brightness(0) invert(1);">
+            
+            <h2 style="font-size: 42px; margin-bottom: 25px; font-weight: 800;">
+                Smetti di essere invisibile
+            </h2>
+            <p style="font-size: 24px; margin-bottom: 50px; color: #ffd700; font-weight: 600; max-width: 700px; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+                5 strategie per attirare l'attenzione, creare curiosità e trasformare prospect in clienti paganti
+            </p>
+
+            <!-- 🔴 PULSANTE FINALE - Sostituisci con il tuo sistema di pagamento -->
+            <button class="cta-primary cta-green" style="font-size: 22px; padding: 22px 55px;">
+                OTTIENI ACCESSO IMMEDIATO
+            </button>
+            <!-- Integra qui Stripe, PayPal, ecc. -->
+
+            <div style="margin-top: 35px; font-size: 16px; color: #999;">
+                <p>✓ Download istantaneo dopo il pagamento</p>
+                <p>✓ Garanzia 30 giorni - rimborso completo senza domande</p>
+                <p>✓ Operativo in meno di 1 ora</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: #999; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p style="font-size: 14px; margin-bottom: 10px;">© 2025 AI WOW. Tutti i diritti riservati.</p>
+            <p style="font-size: 13px;">
+                <a href="#" style="color: #999; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
+                <a href="#" style="color: #999; text-decoration: none; margin: 0 10px;">Termini e Condizioni</a> | 
+                <a href="#" style="color: #999; text-decoration: none; margin: 0 10px;">Contatti</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
